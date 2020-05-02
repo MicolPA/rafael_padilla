@@ -1,0 +1,168 @@
+.title{
+	font-family: 'Oswald', sans-serif;
+}
+
+.mind-title{
+	font-size: 18px;
+}
+nav{
+    margin-bottom: 0px !important;
+}
+*{
+  font-family: 'Quicksand', sans-serif;
+  /*color:black;*/
+}
+.btn-tag{
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 2px solid #d6a000;
+}
+.btn-tag:hover{
+  text-decoration: none;
+  background:#00e58b;
+  color:white !important;
+  /*padding:4px 0px;*/
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 0px;
+}
+label{
+  font-family: 'Quicksand', sans-serif !important;
+  /*color:black;*/
+}
+li{
+  margin-bottom: 0.8rem;
+}
+.text-red{
+  color:#CD3B3B;
+}
+.text-green{
+  color:#d6a000;
+}
+.text-purple{
+  color: purple
+}
+.big-btn{
+  padding: 1rem 8rem;
+  font-weight: bold;
+  font-size: 16px;
+}
+.badge-item {
+    position:relative;
+    display:inline-block;
+}
+.notify-badge{
+    position: absolute;
+    right:10px;
+    top:10px;
+    text-align: center;
+    color:white;
+    padding:5px 10px;
+    font-size:14px;
+}
+
+nav a{
+	color:black;
+	font-size: 14px !important;
+}
+
+nav a:hover{
+	text-decoration: none;
+}
+
+.nav-item{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.title-home:hover{
+	color:#0077e6 !important;
+}
+
+.link-no:hover{
+	text-decoration: none;
+}
+
+label{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+
+input[type=text], textarea {
+    padding: 15px 22px;
+   /*	border-bottom:1px solid #ccc;
+   	border-top:0px;
+   	border-left:0px;
+   	border-right:0px;
+   	border-radius: 0px;*/
+   	box-shadow: none;
+   	font-size: 14px;
+   	height: 40px;
+}
+
+/* INDEX */
+
+.card-mine{
+  /*border:1px solid black;*/
+ /* box-shadow: 0 1px 5px #ccc, 0 1px 2px #ccc;*/
+  font-size: 14px;
+  color:white;
+  background: #262626;
+  border-radius: 3px;
+}
+
+.card-mine:hover{
+  background: rgb(52,58,64);
+  border-radius: 15px;
+  color: white;
+}
+
+.display-5{
+  font-size: 2.5rem;
+}
+
+.display-6{
+  font-size: 1.8rem;
+}
+
+.no-link{
+  text-decoration: none;
+}
+.no-link:hover{
+  text-decoration: none;
+}
+
+.tooltip {
+  font-size: 20px;
+}
+
+.pagination{
+  /*display: inline-block !important;*/
+}
+
+.pagination > .active > a{
+  background: #00e58b !important;
+  border-color: #00e58b !important;
+}
+
+.pagination > li > a, .pagination > li > span{
+  background: #fff !important;
+  color: #000 !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.pagination > li > a:hover{
+  text-decoration: none;
+  background: #00e58b !important;
+}
+
+  @media (max-width: 992px){
+        .jumbotron2{
+          height: 120px !important;
+        }
+
+        .hidden_cell{
+          display: none;
+        }
+    }
+  
