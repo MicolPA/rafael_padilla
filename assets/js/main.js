@@ -19,9 +19,30 @@ function checkClave(){
 	console.log(clave1 + " - " + clave2);
 	if (clave1 != clave2) {
 		$("#pass_alert").show();
-		$(".btn-register").hide();
+		$(".btn_submit").hide();
 	}else{
 		$("#pass_alert").hide();
-		$(".btn-register").show();
+		$(".btn_submit").show();
 	}
 }
+
+$(function() { //shorthand document.ready function
+    $('#formulario').on('submit', function(e) { 
+    	console.log('Hola');
+    	if (screen.width > 1080) {
+            $("body").css("cursor", "progress");
+            $(".btn_submit").hide();
+            $(".div_cargando").show();
+        }else{
+            $(".btn_submit").hide();
+			$(".div_loader").show();
+        }
+		
+    });
+});
+
+$("#btn_submit").on('click', function(){
+	$(this).hide();
+	$(".div_loader").show();
+
+})

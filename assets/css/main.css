@@ -158,11 +158,22 @@ input[type=text], textarea {
 
   @media (max-width: 992px){
         .jumbotron2{
-          height: 120px !important;
+          height: 85px !important;
         }
 
         .hidden_cell{
           display: none;
+        }
+        .div_texto_inicio{
+          text-align: center;
+        }
+
+        .div_loader{
+          height: 100vh;z-index: 1;position: absolute;width: 100%;background: white;opacity: 0.8;
+        }
+
+        .div_loader img{
+          padding-top: 12rem;
         }
     }
   
