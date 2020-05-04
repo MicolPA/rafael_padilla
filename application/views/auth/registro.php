@@ -7,7 +7,7 @@
 			<img src="<?= base_url('assets/images/user.png') ?>" width='80%'>
 		</div>
 		<div class="col-md-8 bg-white">
-			<form method="post" class="mt-4 pl-3" id='formulario' >
+			<form method="post" class="pl-3" id='formulario' >
 				<h2 class="text-success font-weight-bold display-5">Regístrate</h2>
 				<p class="text-success h4">Como Coordinador de tu localidad.</p>
 				<div class="row">

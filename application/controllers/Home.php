@@ -11,12 +11,20 @@ class Home extends CI_Controller {
 		
 	}
 
+	// public function index()
+	// {
+	// 	$data['title'] = 'Inicio';
+	// 	$data['image'] = 'logo.png';
+	// 	$data['content'] = 'home/index';
+ // 		$this->load->view('plantilla', $data);
+	// }
+
 	public function index()
 	{
 		$data['title'] = 'Inicio';
 		$data['image'] = 'logo.png';
 		$data['content'] = 'home/index';
- 		$this->load->view('plantilla', $data);
+ 		$this->load->view('home/plantilla', $data);
 	}
 
 	function getSession(){

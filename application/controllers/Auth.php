@@ -41,7 +41,7 @@ class Auth extends CI_Controller {
 			}
 		}
 
- 		$this->load->view('plantilla', $data);
+ 		$this->load->view('home/plantilla', $data);
 	}
 
 	function save_user($person, $data){
@@ -76,13 +76,13 @@ class Auth extends CI_Controller {
 			$this->checkUser($post);
 		}
 
-		$this->load->view('plantilla', $data);
+		$this->load->view('home/plantilla', $data);
 
 	}
 
 	function logout(){
 
-		$_SESSION['user'] = false;
+		session_destroy();
 		$url = base_url('/');
 		header("Location: $url");
 

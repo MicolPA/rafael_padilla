@@ -46,10 +46,7 @@ class Registrar extends CI_Controller {
 		$this->smartgrid->set_grid($sql, $columns, $config);
 		$data['grid_html'] = $this->smartgrid->render_grid(); 
 
-
-
-
- 		$this->load->view('plantilla', $data);
+ 		$this->load->view('home/plantilla', $data);
 	}
 
 	public function indexOld()
@@ -100,7 +97,7 @@ class Registrar extends CI_Controller {
 			
 		}
 
- 		$this->load->view('plantilla', $data);
+ 		$this->load->view('home/plantilla', $data);
 
 	}
 

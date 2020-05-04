@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row mt-md-5 mt-sm-2">
+	<div class="row mt-md-5">
 		<div class="col-md-8 m-auto pl-md-0">
 			<h2 class="font-weight-bold text-success m-0">Formulario de Registro</h2>
 			<p class="h6 mb-4">Registra tus Sub Coordinadores</p>

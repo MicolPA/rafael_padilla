@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<!-- <meta charset="UTF-8"> -->
 	<title><?= $title ?> | Rafael Padilla (ADY)</title>
 
-	<?php $image = isset($image)?$image:'logo.png' ?>
+	  <?php $image = isset($image)?$image:'logo.png' ?>
 	  <!-- META TAGS -->
 	  <meta property="og:locale" content="es_ES" />
 	  <meta property="og:type" content="website" />
@@ -16,29 +16,50 @@
 	  <meta property="og:image:secure_url" content="<?php echo base_url('assets/images/') . $image ?>" />
 	  <meta name="twitter:image" content="<?php echo base_url('assets/images/') . $image ?>" />
 
-	  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
+	  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/"> -->
 	  
-	  <link rel='icon' type='img/png' href="<?php echo base_url('assets/images/logo.png') ?>" />
+		<link rel='icon' type='img/png' href="<?php echo base_url('assets/images/logo.png') ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap4.min.css') ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css') ?>">
 
 </head>
 <body>
 
-	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-	  <h5 class="my-0 mr-md-auto font-weight-normal">
-	  	<img src="<?= base_url('assets/images/logo-fp.png') ?>" width='30px' class='mr-2' style='margin-top: -0.8rem'> 
-	  	<p class="mt-2" style="display: inline-block;">Rafael Padilla (ADY)
-	  	</p>
-	  </h5>
-	  <nav class="my-2 my-md-0 mr-md-3">
-	    <a class="btn btn-outline-primary" href="#">Registrarse</a>
-	  	<a class="btn btn-outline-success" href="#">Iniciar Sesión</a>
-	  </nav>
-	  
-	</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-xl">
+    <a class="navbar-brand" href="#">Container XL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample07XL">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-toggle="dropdown" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown07XL">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</nav>
 	
-	<?= $content ?>
+	<?//= $content ?>
 
 	<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
   	<script src="<?php echo base_url('assets/js/jquery.mask.js') ?>"></script>

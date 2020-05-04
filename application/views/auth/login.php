@@ -1,16 +1,16 @@
-<div class="container mt-md-5">
+<div class="container-fluid mt-md-5">
 	<div class="row">
-		<div class="pt-2 rounded col-md-6 bg-default m-auto bg-light text-center p-5">
+		<div class="pt-2 rounded col-md-6 bg-default m-auto bg-light text-center p-5 col-12">
 			<form method="post" id='formulario'>
 				<img src="<?= base_url('assets/images/user.png') ?>" class='mt-4 mb-2' width='80px'>
 				<h2 class="mb-3 mt-3">Iniciar sesión</h2>
 
 				<div class="form-group">
-					<input type="text" name="cedula" id='cedula' class="form-control text-center" placeholder="Usuario">
+					<input type="text" name="cedula" id='cedula' class="form-control text-center" placeholder="Usuario" required>
 				</div>
 
 				<div class="form-group">
-					<input type="password" name="clave" class="form-control text-center" placeholder="Contraseña">
+					<input type="password" name="clave" class="form-control text-center" placeholder="Contraseña" required>
 				</div>
 				
 				<div class="form-group text-left pt-2">
