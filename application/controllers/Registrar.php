@@ -14,10 +14,10 @@ class Registrar extends CI_Controller {
 		
 	}
 
-	public function index()
+	public function index2()
 	{
 		// ini_set('memory_limit', '2000M');
-		ini_set('memory_limit', '8192M'); 
+		// ini_set('memory_limit', '8192M'); 
 		$data['title'] = 'Mis Registrados';
 		$data['image'] = 'logo-fp.png';
 		$data['content'] = 'registrar/index';
@@ -25,11 +25,12 @@ class Registrar extends CI_Controller {
 		$id = $_SESSION['user']->id;
 		//where user_id = $id 
 
-		$query = $this->db->query("SELECT * FROM sub_coordinadores where user_id = $id");
-		$m= $query->result();
-		$data['total'] = count($m);
+		// $query = $this->db->query("SELECT * FROM sub_coordinadores where user_id = $id");
+		// $m= $query->result();
+		// $data['total'] = count($m);
+		$data['total'] = '-';
 
-		$sql = "SELECT cedula,nombre,apellido,celular,recinto_nombre,codigo_colegio,mesa,date FROM sub_coordinadores where user_id = $id"; 
+		$sql = "SELECT nombre,apellido,celular,recinto_nombre,mesa,date FROM sub_coordinadores where user_id = $id"; 
 
 		// Column settings
 		$columns = array(
@@ -47,6 +48,21 @@ class Registrar extends CI_Controller {
 		$data['grid_html'] = $this->smartgrid->render_grid(); 
 
  		$this->load->view('home/plantilla', $data);
+	}
+
+	public function index(){
+
+		$data['title'] = 'Mis Registrados';
+		$data['image'] = 'logo-fp.png';
+		$data['content'] = 'registrar/index2';
+		$id = $_SESSION['user']->id;
+		$query = $this->db->query("SELECT * FROM sub_coordinadores where user_id = $id");
+		$data['result'] = $query->result();
+		$data['total'] = count($data['result']);
+
+
+		$this->load->view('home/plantilla', $data);
+
 	}
 
 	public function indexOld()

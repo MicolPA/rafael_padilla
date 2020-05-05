@@ -156,24 +156,28 @@ input[type=text], textarea {
   background: #00e58b !important;
 }
 
-  @media (max-width: 992px){
-        .jumbotron2{
-          height: 85px !important;
-        }
+@media (max-width: 992px){
+      .jumbotron2{
+        height: 85px !important;
+      }
 
-        .hidden_cell{
-          display: none;
-        }
-        .div_texto_inicio{
-          text-align: center;
-        }
+      .hidden_cell{
+        display: none;
+      }
+      .div_texto_inicio{
+        text-align: center;
+      }
 
-        .div_loader{
-          height: 100vh;z-index: 1;position: absolute;width: 100%;background: white;opacity: 0.8;
-        }
+      .div_loader{
+        height: 100vh;z-index: 1;position: absolute;width: 100%;background: white;opacity: 0.8;
+      }
 
-        .div_loader img{
-          padding-top: 12rem;
-        }
-    }
+      .div_loader img{
+        padding-top: 12rem;
+      }
+  }
+
+.dataTables_length, #table_filter{
+    text-align: left !important;
+}
   

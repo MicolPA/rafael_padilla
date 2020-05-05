@@ -7,9 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap4.min.css?v=1') ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css?v=3') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css?v=4') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTable/datatables.min.css?v=3') ?>">
 
 	<?php $image = isset($image)?$image:'logo.png' ?>
+	<title><?php echo $title ?> | Rafael Padilla</title>
     <meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<?php echo $title ?> | Rafael Padilla" />
@@ -37,7 +39,7 @@
 		    <div class="form-inline mt-2 mt-md-0">
 		      <ul class="navbar-nav mr-auto">
 		      <li class="nav-item mr-2 mb-2">
-		    	<a class="btn btn-outline-success btn-block" href="<?php echo base_url('register/subcoordinador') ?>">Registrar</a>
+		    	<a class="btn btn-success btn-block" href="<?php echo base_url('registrar/subcoordinador') ?>">Registrar</a>
 		      </li>
 		      <li class="nav-item mr-2 mb-2">
 		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar') ?>">Mis Registrados</a>
@@ -71,15 +73,14 @@
 
     <?php $this->load->view($content);?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   	<script src="<?php echo base_url('assets/js/jquery.mask.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/sweetalert.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/main.js?v=3') ?>"></script>
+	<script src="<?php echo base_url('assets/js/main.js?v=5') ?>"></script>
 	<script src="<?php echo base_url('assets/js/fontawesome.min.js') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('assets/DataTable/datatables.min.js') ?>"></script>
 
     <?php if ($this->session->flashdata('alert')): ?>
 	<?php $alert = $this->session->flashdata('alert') ?>

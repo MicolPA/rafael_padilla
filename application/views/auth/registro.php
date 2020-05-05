@@ -20,8 +20,8 @@
 						<input type="text" class="form-control" name="celular" id="celular" required value="<?= isset($post['celular'])?$post['celular']:''; ?>">
 					</div>
 					<div class="form-group col-md-6">
-						<label>Correo</label>
-						<input type="email" name='correo' class="form-control" required value="<?= isset($post['correo'])?$post['correo']:''; ?>">
+						<label>Correo (Opcional)</label>
+						<input type="email" name='correo' class="form-control" value="<?= isset($post['correo'])?$post['correo']:''; ?>">
 					</div>
 					<div class="form-group col-md-12">
 						<label>Mesa Electoral</label>
@@ -34,6 +34,8 @@
 					<div class="form-group col-md-6">
 						<label>Confirmar contraseña</label>
 						<input type="password" class="form-control" id="clave2" required minlength='6'>
+					</div>
+					<div class="form-group col-md-12">
 						<p class="text-danger font-weight-bold mt-2" id="pass_alert" style="display: none">Las contraseñas deben coincidir.</p>
 					</div>
 					<div class=" col-md-12">

@@ -10,9 +10,10 @@
 		</div>
 
 		<div class="col-md-12 mb-2">
-			<div class="table-responsive">
+			<div class="table-responsive" id="table">
 				<?= $grid_html ?>
 			</div>
 		</div>
 	</div>
 </div>
+

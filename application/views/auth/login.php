@@ -1,8 +1,8 @@
 <div class="container-fluid mt-md-5">
 	<div class="row">
-		<div class="pt-2 rounded col-md-6 bg-default m-auto bg-light text-center p-5 col-12">
+		<div class="rounded col-md-6 bg-default m-auto bg-light text-center p-5 col-12">
 			<form method="post" id='formulario'>
-				<img src="<?= base_url('assets/images/user.png') ?>" class='mt-4 mb-2' width='80px'>
+				<img src="<?= base_url('assets/images/user.png') ?>" class='mb-2' width='80px'>
 				<h2 class="mb-3 mt-3">Iniciar sesión</h2>
 
 				<div class="form-group">

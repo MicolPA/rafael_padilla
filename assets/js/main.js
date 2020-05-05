@@ -46,3 +46,10 @@ $("#btn_submit").on('click', function(){
 	$(".div_loader").show();
 
 })
+
+$(document).ready(function() {
+    $('#table').DataTable( {
+        "lengthMenu": [[20, 25, 50, -1], [20, 25, 50, "All"]],
+        "searching":     false
+    } );
+} );
