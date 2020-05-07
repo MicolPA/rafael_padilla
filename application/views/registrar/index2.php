@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mt-2">
-			<h2 class="text-success">Listado de Sub Coordinadores</h2>
+			<h1 class="font-weight-bold display-6 text-success">Listado de Sub Coordinadores</h1>
 		</div>
 
 		<div class="col-md-12 mt-2">

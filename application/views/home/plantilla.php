@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es_ES">
   <head>
 
     <!-- Required meta tags -->
@@ -44,6 +44,14 @@
 		      <li class="nav-item mr-2 mb-2">
 		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar') ?>">Mis Registrados</a>
 		      </li>
+		      <?php if ($_SESSION['user']->username == '00109692343' or $_SESSION['user']->username == '00114126634'): ?>
+		      <li class="nav-item mr-2 mb-2">
+		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar/coordinadores') ?>">Coordinadores</a>
+		      </li>
+		      <li class="nav-item mr-2 mb-2">
+		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar/listadoSub') ?>">Sub Coordinadores</a>
+		      </li>	
+		      <?php endif ?>
 		      <li class="nav-item mr-2 mb-2">
 		  		<a class="btn btn-outline-danger btn-block" href="<?php echo base_url('/auth/logout') ?>">Salir</a>
 		      </li>
@@ -78,7 +86,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   	<script src="<?php echo base_url('assets/js/jquery.mask.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/sweetalert.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/main.js?v=5') ?>"></script>
+	<script src="<?php echo base_url('assets/js/main.js?v=7') ?>"></script>
 	<script src="<?php echo base_url('assets/js/fontawesome.min.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/DataTable/datatables.min.js') ?>"></script>
 

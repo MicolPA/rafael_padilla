@@ -65,6 +65,46 @@ class Registrar extends CI_Controller {
 
 	}
 
+	public function coordinadores(){
+
+		$data['title'] = 'Mis Registrados';
+		$data['image'] = 'logo-fp.png';
+		$data['content'] = 'registrar/coordinadores';
+		$id = $_SESSION['user']->id;
+		$query = $this->db->query("SELECT * FROM coordinadores");
+		$data['result'] = $query->result();
+		$data['total'] = count($data['result']);
+		$data['admin'] = 1;
+
+
+		$this->load->view('home/plantilla', $data);
+
+	}
+	public function listadoSub(){
+
+		$data['title'] = 'Mis Registrados';
+		$data['image'] = 'logo-fp.png';
+		$data['content'] = 'registrar/coordinadores';
+		$id = $_SESSION['user']->id;
+		$query = $this->db->query("SELECT * FROM sub_coordinadores");
+		$data['result'] = $query->result();
+		$data['total'] = count($data['result']);
+
+		$this->load->view('home/plantilla', $data);
+	}
+
+	public function fixCed(){
+
+		$query = $this->db->query("SELECT * FROM sub_coordinadores");
+		$result = $query->result();
+
+		foreach ($result as $r) {
+			$user = $this->db->query("SELECT * FROM user where id = $r->user_id");
+			$user = $user->first_row();
+		}
+
+	}
+
 	public function indexOld()
 	{
 		// ini_set('memory_limit', '2000M');
@@ -117,9 +157,65 @@ class Registrar extends CI_Controller {
 
 	}
 
+	public function subcoordinadores(){
+		$user_id = $_GET['id'];
+		$data['title'] = 'Mis Registrados';
+		$data['image'] = 'logo-fp.png';
+		$data['content'] = 'registrar/coordinadores';
+		$id = $_SESSION['user']->id;
+		$query = $this->db->query("SELECT * FROM sub_coordinadores where user_id = $user_id");
+
+		$data['result'] = $query->result();
+		$data['total'] = count($data['result']);
+
+		$user_query = $this->db->query("SELECT * FROM user where id = $user_id");
+		$data['user_info'] = $user_query->first_row();
+
+		$this->load->view('home/plantilla', $data);
+	}
+
 	function getSession(){
 		if (!$_SESSION['user']) {
-			redirect(base_url('auth'));
-		} 
+			redirect(base_url('auth/login'));
+		}else{
+			if (!$this->Gestion->get_user($_SESSION['user']->username)) {
+			session_destroy();
+			redirect(base_url('auth/login'));
+				
+			}
+		}
+	}
+
+	
+
+	function eliminarSub(){
+
+		$id = $_GET['id'];
+		$this->db->where('id', $id);
+		$this->db->delete('sub_coordinadores');
+
+		$this->session->set_flashdata('success','Sub Coordinador Eliminado Correctamente');
+		redirect(base_url('registrar/listadoSub'));
+	}
+
+	function editar_sub(){
+
+		$cedula = $_GET['cedula'];
+
+		$data['title'] = 'Editar Usuario';
+		$data['content'] = 'registrar/editar-subcoordinador';
+
+		$url = base_url('registrar/listadoSub');
+
+		$post = $_POST;
+		$data['info'] = $this->Gestion->get_subcoordinador($cedula);
+
+		if ($post) {
+			$this->Gestion->updateSubCoordinador($cedula, $post['celular'], $post['mesa']);
+			$this->session->set_flashdata('success','Datos Actualizados Correctamente');
+			header("Location: $url");
+		}
+
+		$this->load->view('home/plantilla', $data);
 	}
 }

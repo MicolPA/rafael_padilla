@@ -16,7 +16,6 @@ class Auth extends CI_Controller {
 	{
 		$post = $_POST;
 		$data['title'] = 'Regístrarse como Coordinador';
-		$data['image'] = 'logo.png';
 		$data['content'] = 'auth/registro';
 		$this_url = base_url('auth/registro');
 
@@ -95,8 +94,6 @@ class Auth extends CI_Controller {
 		$this_url = base_url('auth/login');
 
 		if ($result) {
-			// print_r($data['clave']);
-			// print_r($result->clave);
 			$verify = password_verify($data['clave'], $result->clave);
 			if ($verify) {
 				$_SESSION['user'] = $result;
@@ -110,5 +107,49 @@ class Auth extends CI_Controller {
 			$this->session->set_flashdata('error','Usuario y/o contraseña incorrecto');
 			header("Location: $this_url");
 		}
+	}
+
+	function usuario(){
+
+		$cedula = $_GET['cedula'];
+
+		$data['title'] = 'Editar Usuario';
+		$data['content'] = 'auth/usuario';
+
+		$url = base_url('registrar/coordinadores');
+
+		$post = $_POST;
+		$data['user_info'] = $this->Gestion->get_user($cedula);
+		$data['coordinador_info'] = $this->Gestion->get_coordinador($cedula);
+
+		if ($post) {
+			$this->Gestion->updateUser($cedula, $post['clave'], $post['celular']);
+			$this->Gestion->updateCoordinador($cedula, $post['celular'], $post['mesa']);
+
+			$this->session->set_flashdata('success','Datos Actualizados Correctamente');
+			header("Location: $url");
+		}
+
+		$this->load->view('home/plantilla', $data);
+	}
+
+	function eliminarUsuario(){
+
+		$id = $_GET['id'];
+		$user_info = $this->Gestion->get_user(null,$id);
+
+		$this->db->where('cedula', $user_info->username);
+		$this->db->delete('coordinadores');
+
+		$this->db->where('id', $id);
+		$this->db->delete('user');
+
+		$this->db->where('user_id', $id);
+		$this->db->delete('sub_coordinadores');
+
+		
+
+		$this->session->set_flashdata('success','Coordinador Eliminado Correctamente');
+		redirect(base_url('registrar/coordinadores'));
 	}
 }

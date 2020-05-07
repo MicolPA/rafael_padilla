@@ -4,9 +4,71 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Gestion extends CI_Model{
 
 
-	function get_user($cedula){
+	function get_user($cedula=null, $id=null){
 
-		$query = $this->db->query("SELECT * FROM user where username = $cedula");
+		
+		if ($id) {
+			$query = $this->db->query("SELECT * FROM user where id = $id");
+		}else{
+			$cedula = str_replace('-', '', $cedula);
+			$query = $this->db->query("SELECT * FROM user where username = $cedula");
+		}
+
+		if ($query->result()) {
+			return $query->first_row();
+		}else{
+			return false;
+		}
+	}
+
+	function updateUser($cedula, $clave, $celular){
+
+		if ($clave) {
+			$clave = password_hash($clave, PASSWORD_DEFAULT);
+			$user = array(
+				'clave' => $clave,
+				'celular' => $celular
+			);
+		}else{
+			$user = array(
+				'celular' => $celular
+			);
+		}
+
+		
+
+
+		$this->db->where('username', $cedula);
+		$this->db->update('user', $user);
+
+	}
+
+	function updateCoordinador($cedula, $celular, $mesa){
+
+		$user = array(
+			'celular' => $celular,
+			'mesa' => $mesa,
+		);
+		$this->db->where('cedula', $cedula);
+		$this->db->update('coordinadores', $user);
+
+	}
+
+	function updateSubCoordinador($cedula, $celular, $mesa){
+
+		$user = array(
+			'celular' => $celular,
+			'mesa' => $mesa,
+		);
+		$this->db->where('cedula', $cedula);
+		$this->db->update('sub_coordinadores', $user);
+
+	}
+
+	function get_coordinador($cedula){
+
+		$cedula = str_replace('-', '', $cedula);
+		$query = $this->db->query("SELECT * FROM coordinadores where cedula = $cedula");
 
 		if ($query->result()) {
 			return $query->first_row();
@@ -109,7 +171,7 @@ class Gestion extends CI_Model{
 			'codigo_recinto' => $person->CodigoRecinto,
 			'codigo_colegio' => $person->CodigoColegio,
 			'celular' => $data['celular'],
-			// 'correo' => $data['correo'],
+			'coordinador_cedula' => $user->username,
 			'user_id' => $user->id,
 			'cargo' => 'Sub Coordinador',
 			'mesa' => $data['mesa'],
