@@ -88,4 +88,9 @@ $(document).ready(function() {
         "lengthMenu": [[20, 25, 50, -1], [20, 25, 50, "All"]],
         "searching":     true
     } );
+
+    $('.table').DataTable( {
+        "lengthMenu": [[20, 25, 50, -1], [20, 25, 50, "All"]],
+        "searching":     true
+    } );
 } );

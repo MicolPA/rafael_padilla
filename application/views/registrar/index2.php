@@ -1,6 +1,3 @@
-<style>
-	
-</style>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mt-2">
@@ -10,10 +7,10 @@
 		<div class="col-md-12 mt-2">
 			<p class="h6"><i class='fa fa-circle'  style='color:green;'></i>  Total Registrados: <?= $total ?></p>
 		</div>
-
+		
 		<div class="col-md-12 mb-2 mt-4">
 			<div class="table-responsive text-left">
-				<table class="table table-striped" id='table'>
+				<table class="table table-striped">
 					<thead>
 					<tr>
 						<th>Nombre</th>

@@ -171,7 +171,6 @@ class Gestion extends CI_Model{
 			'codigo_recinto' => $person->CodigoRecinto,
 			'codigo_colegio' => $person->CodigoColegio,
 			'celular' => $data['celular'],
-			'coordinador_cedula' => $user->username,
 			'user_id' => $user->id,
 			'cargo' => 'Sub Coordinador',
 			'mesa' => $data['mesa'],

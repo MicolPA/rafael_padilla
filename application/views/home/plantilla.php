@@ -86,7 +86,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   	<script src="<?php echo base_url('assets/js/jquery.mask.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/sweetalert.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/main.js?v=7') ?>"></script>
+	<script src="<?php echo base_url('assets/js/main.js?v=8') ?>"></script>
 	<script src="<?php echo base_url('assets/js/fontawesome.min.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/DataTable/datatables.min.js') ?>"></script>
 
@@ -110,5 +110,13 @@
 		swal("Error", "<?= $alert ?>", "error");
 	</script>	
 	<?php endif ?>
+	<style>
+	@media (max-width: 992px){
+      	.hide_cel{
+			display: none;
+		} 
+    }
+	
+</style>
   </body>
 </html>

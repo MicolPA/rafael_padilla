@@ -1,11 +1,4 @@
-<style>
-	@media (max-width: 992px){
-      	.hide_cel{
-			display: none;
-		} 
-    }
-	
-</style>
+
 <div class="container">
 	<div class="row align-items-center pb-2">
 		<div class="col-sm-12 d-md-none d-lg-none pt-md-4 pt-sm-0 div_texto_inicio">

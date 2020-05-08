@@ -4,7 +4,6 @@
 	$circ = isset($get['circ'])?$get['circ']:'';
 	$municipio = isset($get['municipio'])?$get['municipio']:'';
 ?>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mt-2">
@@ -20,6 +19,36 @@
 			<p class="h6"><i class='fa fa-circle'  style='color:green;'></i>  Total <?= isset($admin)?"Coordinadores":"Sub Coordinadores" ?>: <?= number_format($total) ?></p>
 		</div>
 
+		<form class="w-100 mt-3">
+			<div class="col-md-12">
+				<div class="row">
+				<div class="col-md-3">
+					<label>Municipio</label>
+					<select name="municipio" id="" class="form-control" required>
+						<option value="">Todos</option>
+						<option value="223" <?= $municipio=='223'?'selected':'' ?>>Santo Domingo Este</option>
+						<option value="226" <?= $municipio=='226'?'selected':'' ?>>Boca Chica</option>
+						<option value="286" <?= $municipio=='286'?'selected':'' ?>>La Caleta</option>
+						<option value="291" <?= $municipio=='291'?'selected':'' ?>>San Luis</option>
+					</select>
+				</div>
+
+				<div class="col-md-2">
+					<label>Circunscripción</label>
+					<select name="circ" id="" class="form-control">
+						<option value="">Todas</option>
+						<option value="1" <?= $circ=='1'?'selected':'' ?>>01</option>
+						<option value="2" <?= $circ=='2'?'selected':'' ?>>02</option>
+						<option value="3" <?= $circ=='3'?'selected':'' ?>>03</option>
+					</select>
+				</div>
+				<div class="col-md-2 pt-4">
+					<input type="submit" value="Búscar" class="btn btn-primary mt-1 btn-block">
+				</div>
+				</div>
+			</div>
+		</form>
+
 		<div class="col-md-12 mb-2 mt-4">
 			<div class="table-responsive text-left">
 				<table class="table table-striped">
@@ -28,6 +57,8 @@
 						<th>Nombre</th>
 						<th>Apellido</th>
 						<th>Célular</th>
+						<th class="hide_cel">Municipio</th>
+						<th class="hide_cel">Circ.</th>
 						<th>Recinto</th>
 						<th>Mesa</th>
 						<?php if (isset($admin)): ?>
@@ -49,6 +80,8 @@
 							<td><?= $r->nombre ?></td>
 							<td><?= $r->apellido ?></td>
 							<td><?= $r->celular ?></td>
+							<td class="hide_cel"><?= $r->municipio_nombre ?></td>
+							<td class="hide_cel"><?= $r->circunscripcion ?></td>
 							<td><?= $r->recinto_nombre ?></td>
 							<td><?= $r->mesa ?></td>
 							<!-- Coordinadores -->
@@ -76,7 +109,7 @@
 							<td><?= $user?"$user->nombre $user->apellido" :'';?></td>	
 							<!-- User Exist If -->
 							<?php else: ?>
-								<td></td>
+							<td></td>
 							<?php endif ?>
 
 							<td><a href="<?= base_url('registrar/editar_sub') ?>?cedula=<?= $r->cedula ?>" class="no-link">Editar</a></td>	

@@ -82,11 +82,34 @@ class Registrar extends CI_Controller {
 	}
 	public function listadoSub(){
 
+		$get = $_GET;
 		$data['title'] = 'Mis Registrados';
 		$data['image'] = 'logo-fp.png';
-		$data['content'] = 'registrar/coordinadores';
+		$data['content'] = 'registrar/sub_coordinadores';
 		$id = $_SESSION['user']->id;
 		$query = $this->db->query("SELECT * FROM sub_coordinadores");
+		if ($get) {
+			$circ = isset($get['circ'])?$get['circ']:'';
+			$municipio = isset($get['municipio'])?$get['municipio']:'';
+
+			if ($circ AND $municipio AND $municipio != '1') {
+				$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio and circunscripcion = $circ");
+			}else{
+
+				if ($municipio == '1') {
+					$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id <> 223");
+				}else{
+					$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio");
+				}
+
+				if ($circ) {
+					$query = $this->db->query("SELECT * FROM sub_coordinadores where circunscripcion = $circ");
+				}
+
+
+			}
+			
+		}
 		$data['result'] = $query->result();
 		$data['total'] = count($data['result']);
 
