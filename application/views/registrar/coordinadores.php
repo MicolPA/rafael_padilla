@@ -27,6 +27,7 @@
 					<tr>
 						<th>Nombre</th>
 						<th>Apellido</th>
+						<th>Cédula</th>
 						<th>Célular</th>
 						<th>Recinto</th>
 						<th>Mesa</th>
@@ -48,6 +49,7 @@
 						<tr>
 							<td><?= $r->nombre ?></td>
 							<td><?= $r->apellido ?></td>
+							<td><?= $r->cedula ?></td>
 							<td><?= $r->celular ?></td>
 							<td><?= $r->recinto_nombre ?></td>
 							<td><?= $r->mesa ?></td>

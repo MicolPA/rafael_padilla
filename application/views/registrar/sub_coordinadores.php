@@ -56,6 +56,7 @@
 					<tr>
 						<th>Nombre</th>
 						<th>Apellido</th>
+						<th>Cédula</th>
 						<th>Célular</th>
 						<th class="hide_cel">Municipio</th>
 						<th class="hide_cel">Circ.</th>
@@ -79,6 +80,7 @@
 						<tr>
 							<td><?= $r->nombre ?></td>
 							<td><?= $r->apellido ?></td>
+							<td><?= $r->cedula ?></td>
 							<td><?= $r->celular ?></td>
 							<td class="hide_cel"><?= $r->municipio_nombre ?></td>
 							<td class="hide_cel"><?= $r->circunscripcion ?></td>
