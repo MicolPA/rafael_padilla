@@ -3,6 +3,7 @@
 	$get = $_GET;
 	$circ = isset($get['circ'])?$get['circ']:'';
 	$municipio = isset($get['municipio'])?$get['municipio']:'';
+	$mesa = isset($get['mesa'])?$get['mesa']:'';
 ?>
 <div class="container">
 	<div class="row">
@@ -24,12 +25,13 @@
 				<div class="row">
 				<div class="col-md-3">
 					<label>Municipio</label>
-					<select name="municipio" id="" class="form-control" required>
+					<select name="municipio" id="" class="form-control" >
 						<option value="">Todos</option>
 						<option value="223" <?= $municipio=='223'?'selected':'' ?>>Santo Domingo Este</option>
 						<option value="226" <?= $municipio=='226'?'selected':'' ?>>Boca Chica</option>
 						<option value="286" <?= $municipio=='286'?'selected':'' ?>>La Caleta</option>
 						<option value="291" <?= $municipio=='291'?'selected':'' ?>>San Luis</option>
+						<option value="227" <?= $municipio=='227'?'selected':'' ?>>San Antonio de Guerra</option>
 					</select>
 				</div>
 
@@ -41,6 +43,10 @@
 						<option value="2" <?= $circ=='2'?'selected':'' ?>>02</option>
 						<option value="3" <?= $circ=='3'?'selected':'' ?>>03</option>
 					</select>
+				</div>
+				<div class="col-md-2">
+					<label>Mesa</label>
+					<input type="text" name="mesa" class="form-control" value="<?= $mesa ?>">
 				</div>
 				<div class="col-md-2 pt-4">
 					<input type="submit" value="Búscar" class="btn btn-primary mt-1 btn-block">

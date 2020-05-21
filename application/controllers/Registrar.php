@@ -87,29 +87,52 @@ class Registrar extends CI_Controller {
 		$data['image'] = 'logo-fp.png';
 		$data['content'] = 'registrar/sub_coordinadores';
 		$id = $_SESSION['user']->id;
+		$condiciones = array();
 		$query = $this->db->query("SELECT * FROM sub_coordinadores");
+
 		if ($get) {
-			$circ = isset($get['circ'])?$get['circ']:'';
-			$municipio = isset($get['municipio'])?$get['municipio']:'';
 
-			if ($circ AND $municipio AND $municipio != '1') {
-				$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio and circunscripcion = $circ");
-			}else{
-
-				if ($municipio == '1') {
-					$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id <> 223");
-				}else{
-					$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio");
-				}
-
-				if ($circ) {
-					$query = $this->db->query("SELECT * FROM sub_coordinadores where circunscripcion = $circ");
-				}
-
-
+			if ($get['municipio']) {
+				$condiciones['municipio_id'] = $get['municipio'];
 			}
+
+			if ($get['mesa']) {
+				$condiciones['mesa'] = $get['mesa'];
+			}
+			echo $get['circ'];
+			if ($get['circ']) {
+				$condiciones['circunscripcion'] = "0".$get['circ'];
+			}
+
+			$query = $this->db->get_where('sub_coordinadores', $condiciones);
 			
 		}
+
+
+
+
+		// if ($get) {
+		// 	$circ = isset($get['circ'])?$get['circ']:'';
+		// 	$municipio = isset($get['municipio'])?$get['municipio']:'';
+
+		// 	if ($circ AND $municipio AND $municipio != '1') {
+		// 		$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio and circunscripcion = $circ");
+		// 	}else{
+
+		// 		if ($municipio == '1') {
+		// 			$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id <> 223");
+		// 		}else{
+		// 			$query = $this->db->query("SELECT * FROM sub_coordinadores where municipio_id = $municipio");
+		// 		}
+
+		// 		if ($circ) {
+		// 			$query = $this->db->query("SELECT * FROM sub_coordinadores where circunscripcion = $circ");
+		// 		}
+
+
+		// 	}
+			
+		// }
 		$data['result'] = $query->result();
 		$data['total'] = count($data['result']);
 
