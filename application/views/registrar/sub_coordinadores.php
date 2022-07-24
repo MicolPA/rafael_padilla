@@ -67,7 +67,7 @@
 						<th class="hide_cel">Municipio</th>
 						<th class="hide_cel">Circ.</th>
 						<th>Recinto</th>
-						<th>Mesa</th>
+						<!-- <th>Mesa</th> -->
 						<?php if (isset($admin)): ?>
 						<th>Registrados</th>
 						<th> - </th>
@@ -91,7 +91,7 @@
 							<td class="hide_cel"><?= $r->municipio_nombre ?></td>
 							<td class="hide_cel"><?= $r->circunscripcion ?></td>
 							<td><?= $r->recinto_nombre ?></td>
-							<td><?= $r->mesa ?></td>
+							<!-- <td><?//= $r->mesa ?></td> -->
 							<!-- Coordinadores -->
 							<?php if (isset($admin)): ?>
 							<?php 

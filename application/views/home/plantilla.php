@@ -38,35 +38,35 @@
 		    <?php if (isset($_SESSION['user'])): ?>
 		    <div class="form-inline mt-2 mt-md-0">
 		      <ul class="navbar-nav mr-auto">
-		      <li class="nav-item mr-2 mb-2">
-		    	<a class="btn btn-success btn-block" href="<?php echo base_url('registrar/subcoordinador') ?>">Registrar</a>
-		      </li>
-		      <li class="nav-item mr-2 mb-2">
-		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar') ?>">Mis Registrados</a>
-		      </li>
-		      <?php if ($_SESSION['user']->username == '00109692343' or $_SESSION['user']->username == '00114126634'): ?>
-		      <li class="nav-item mr-2 mb-2">
-		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar/coordinadores') ?>">Coordinadores</a>
-		      </li>
-		      <li class="nav-item mr-2 mb-2">
-		  		<a class="btn btn-outline-success btn-block" href="<?php echo base_url('registrar/listadoSub') ?>">Sub Coordinadores</a>
-		      </li>	
-		      <?php endif ?>
-		      <li class="nav-item mr-2 mb-2">
-		  		<a class="btn btn-outline-danger btn-block" href="<?php echo base_url('/auth/logout') ?>">Salir</a>
-		      </li>
-		    </ul>
+			      <li class="nav-item mr-2 mb-2">
+			    		<a class="nav-link text-success font-weight-bold" href="<?php echo base_url('registrar/subcoordinador') ?>">Registrar</a>
+			      </li>
+			      <li class="nav-item mr-2 mb-2">
+			  			<a class="nav-link text-success font-weight-bold" href="<?php echo base_url('registrar') ?>">Mis Registrados</a>
+			      </li>
+			      <?php if ($_SESSION['user']->username == '00109692343' or $_SESSION['user']->username == '00114126634'): ?>
+			      <li class="nav-item mr-2 mb-2">
+			  			<a class="nav-link text-success font-weight-bold" href="<?php echo base_url('registrar/coordinadores') ?>">Coordinadores</a>
+			      </li>
+			      <li class="nav-item mr-2 mb-2">
+			  			<a class="nav-link text-success font-weight-bold" href="<?php echo base_url('registrar/listadoSub') ?>">Sub Coordinadores</a>
+			      </li>	
+			      <?php endif ?>
+			      <li class="nav-item mr-2 mb-2">
+			  			<a class="btn btn-outline-danger btn-block" href="<?php echo base_url('/auth/logout') ?>">Salir</a>
+			      </li>
+		    	</ul>
 		    </div>
 		    <?php else: ?>
 		    <div class="form-inline mt-2 mt-md-0">
 		      <ul class="navbar-nav mr-auto">
-		      <li class="nav-item mr-2 mb-2">
-		    	<a class="btn btn-outline-success btn-block" href="<?php echo base_url('auth/registro') ?>">Regístrarse</a>
-		      </li>
-		      <li class="nav-item mr-2 mb-2">
-		  		<a class="btn btn-success btn-block" href="<?php echo base_url('/auth/login') ?>">Iniciar Sesión</a>
-		      </li>
-		    </ul>
+			      <li class="nav-item mr-2 mb-2">
+			    		<a class="nav-link text-success font-weight-bold" href="<?php echo base_url('auth/registro') ?>">Regístrarse</a>
+			      </li>
+			      <li class="nav-item mr-2 mb-2">
+			  			<a class="btn btn-success btn-block" href="<?php echo base_url('/auth/login') ?>">Iniciar Sesión</a>
+			      </li>
+			    </ul>
 		    </div>	
 		    <?php endif ?>
 		    

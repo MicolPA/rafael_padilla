@@ -15,10 +15,10 @@
 					<label class="font-weight-bold">Nombre</label>
 					<input type="text" class="form-control" value="<?= $user_info->nombre . ' ' . $user_info->apellido ?>" readonly>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label class="font-weight-bold">Mesa</label>
 					<input type="text" class="form-control" name='mesa' value="<?= $coordinador_info->mesa ?>">
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label class="font-weight-bold">Célular</label>
 					<input type="text" class="form-control" id='celular' name='celular' value="<?= $coordinador_info->celular ?>">

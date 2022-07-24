@@ -23,10 +23,10 @@
 						<label>Correo (Opcional)</label>
 						<input type="email" name='correo' class="form-control" value="<?= isset($post['correo'])?$post['correo']:''; ?>">
 					</div>
-					<div class="form-group col-md-12">
+					<!-- <div class="form-group col-md-12">
 						<label>Mesa Electoral</label>
-						<input type="text" name='mesa' class="form-control" required value="<?= isset($post['mesa'])?$post['mesa']:''; ?>">
-					</div>
+						<input type="text" name='mesa' class="form-control" required value="<?//= isset($post['mesa'])?$post['mesa']:''; ?>">
+					</div> -->
 					<div class="form-group col-md-6">
 						<label>Contraseña</label>
 						<input type="password" name='clave' class="form-control" id="clave1" required minlength='6'>

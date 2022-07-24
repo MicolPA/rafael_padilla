@@ -18,10 +18,10 @@
 					<input type="text" class="form-control" name='celular' id='celular' required value="<?= isset($post['celular'])?$post['celular']:''; ?>">
 				</div>
 
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label class="h5">Mesa Electoral</label>
-					<input type="text" class="form-control" name='mesa' id='cedula' required value="<?= isset($post['mesa'])?$post['mesa']:''; ?>">
-				</div>
+					<input type="text" class="form-control" name='mesa' id='cedula' required value="<?//= isset($post['mesa'])?$post['mesa']:''; ?>">
+				</div> -->
 				<div class="div_cargando text-center" style="display: none">
 					<img src="<?= base_url('assets/images/loading-sm.gif') ?>" width='80px' style='margin-left: -4rem'>
 					Registrando Sub Coordinador...

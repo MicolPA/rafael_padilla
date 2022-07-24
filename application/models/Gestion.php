@@ -43,7 +43,7 @@ class Gestion extends CI_Model{
 
 	}
 
-	function updateCoordinador($cedula, $celular, $mesa){
+	function updateCoordinador($cedula, $celular, $mesa=null){
 
 		$user = array(
 			'celular' => $celular,
@@ -54,7 +54,7 @@ class Gestion extends CI_Model{
 
 	}
 
-	function updateSubCoordinador($cedula, $celular, $mesa){
+	function updateSubCoordinador($cedula, $celular, $mesa=null){
 
 		$user = array(
 			'celular' => $celular,
@@ -127,7 +127,7 @@ class Gestion extends CI_Model{
 		}
 	}
 
-	function save_coordinador($person, $user, $mesa){
+	function save_coordinador($person, $user, $mesa=null){
 
 
 		$person = array(
@@ -173,7 +173,7 @@ class Gestion extends CI_Model{
 			'celular' => $data['celular'],
 			'user_id' => $user->id,
 			'cargo' => 'Sub Coordinador',
-			'mesa' => $data['mesa'],
+			'mesa' => null,
 			'date' => date('Y-m-d H:i:s'),
 		);
 

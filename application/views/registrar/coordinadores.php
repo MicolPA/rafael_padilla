@@ -30,7 +30,7 @@
 						<th>Cédula</th>
 						<th>Célular</th>
 						<th>Recinto</th>
-						<th>Mesa</th>
+						<!-- <th>Mesa</th> -->
 						<?php if (isset($admin)): ?>
 						<th>Registrados</th>
 						<th> - </th>
@@ -52,7 +52,7 @@
 							<td><?= $r->cedula ?></td>
 							<td><?= $r->celular ?></td>
 							<td><?= $r->recinto_nombre ?></td>
-							<td><?= $r->mesa ?></td>
+							<!-- <td><?//= $r->mesa ?></td> -->
 							<!-- Coordinadores -->
 							<?php if (isset($admin)): ?>
 							<?php 

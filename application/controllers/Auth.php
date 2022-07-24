@@ -60,7 +60,8 @@ class Auth extends CI_Controller {
 
 		$this->db->insert('user', $user);
 
-		$this->Gestion->save_coordinador($person, $user, $data['mesa']);
+		// $this->Gestion->save_coordinador($person, $user, $data['mesa']);
+		$this->Gestion->save_coordinador($person, $user, null);
 
 	}
 
@@ -124,7 +125,8 @@ class Auth extends CI_Controller {
 
 		if ($post) {
 			$this->Gestion->updateUser($cedula, $post['clave'], $post['celular']);
-			$this->Gestion->updateCoordinador($cedula, $post['celular'], $post['mesa']);
+			// $this->Gestion->updateCoordinador($cedula, $post['celular'], $post['mesa']);
+			$this->Gestion->updateCoordinador($cedula, $post['celular'], null);
 
 			$this->session->set_flashdata('success','Datos Actualizados Correctamente');
 			header("Location: $url");

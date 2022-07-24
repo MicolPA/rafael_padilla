@@ -18,7 +18,7 @@
 						<th>Cédula</th>
 						<th>Célular</th>
 						<th>Recinto</th>
-						<th>Mesa</th>
+						<!-- <th>Mesa</th> -->
 					</tr>	
 					</thead>
 					
@@ -31,7 +31,7 @@
 							<td><?= $r->cedula ?></td>
 							<td><?= $r->celular ?></td>
 							<td><?= $r->recinto_nombre ?></td>
-							<td><?= $r->mesa ?></td>
+							<!-- <td><?//= $r->mesa ?></td> -->
 						</tr>
 					<?php endforeach ?>
 					</tbody>
