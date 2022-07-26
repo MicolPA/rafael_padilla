@@ -183,24 +183,37 @@ class Registrar extends CI_Controller {
 			if (!$this->Gestion->get_subcoordinador($cedula)) {
 
 				if ($result = $this->Gestion->get_person_padron($cedula)) {
-					$this->Gestion->save_subcoordinador($result, $post);
-					$this->session->set_flashdata('success','Sub Coordinador Registrado Correctamente');
-					header("Location: $this_url");
+					if ($this->verifyBirthDate($result->FechaNacimiento, $_POST['fecha_nacimiento'])) {
+						$this->Gestion->save_subcoordinador($result, $post);
+						$this->session->set_flashdata('success','Sub Coordinador Registrado Correctamente');
+					}else{
+						$this->session->set_flashdata('error','Fecha de nacimiento Inválida');
+					}
+					
 				}else{
 					$this->session->set_flashdata('error','Cédula Inválida');
-					header("Location: $this_url");
+					// header("Location: $this_url");
 				}
 				
 			}else{
 				$this->session->set_flashdata('alert','Esta persona ya se encuentra registrada');
-				header("Location: $this_url");
+				// header("Location: $this_url");
 			}
 
 			
+			header("Location: $this_url");
 		}
 
  		$this->load->view('home/plantilla', $data);
 
+	}
+
+
+	function verifyBirthDate($datePadron, $dateInput){
+
+		$datePadron = date('d/m/Y', strtotime($datePadron));
+		$dateInput = date('d/m/Y', strtotime($dateInput));
+		return $datePadron != $dateInput ? false : true;
 	}
 
 	public function subcoordinadores(){

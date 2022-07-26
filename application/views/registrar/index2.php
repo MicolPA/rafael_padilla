@@ -17,6 +17,7 @@
 						<th>Apellido</th>
 						<th>Cédula</th>
 						<th>Célular</th>
+						<th>Fecha Nacimiento</th>
 						<th>Recinto</th>
 						<!-- <th>Mesa</th> -->
 					</tr>	
@@ -30,6 +31,7 @@
 							<td><?= $r->apellido ?></td>
 							<td><?= $r->cedula ?></td>
 							<td><?= $r->celular ?></td>
+							<td><?= $r->fecha_nacimiento ?></td>
 							<td><?= $r->recinto_nombre ?></td>
 							<!-- <td><?//= $r->mesa ?></td> -->
 						</tr>

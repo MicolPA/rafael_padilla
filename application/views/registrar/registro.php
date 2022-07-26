@@ -17,6 +17,10 @@
 					<label class="h5">Célular</label>
 					<input type="text" class="form-control" name='celular' id='celular' required value="<?= isset($post['celular'])?$post['celular']:''; ?>">
 				</div>
+				<div class="form-group">
+					<label class="h5">Fecha Nacimiento</label>
+					<input type="date" class="form-control" data-date-format="DD MMMM YYYY" name='fecha_nacimiento' required value="<?= isset($post['fecha_nacimiento'])?$post['fecha_nacimiento']:''; ?>">
+				</div>
 
 				<!-- <div class="form-group">
 					<label class="h5">Mesa Electoral</label>

@@ -66,6 +66,7 @@
 						<th>Célular</th>
 						<th class="hide_cel">Municipio</th>
 						<th class="hide_cel">Circ.</th>
+						<th>Fecha Nacimiento</th>
 						<th>Recinto</th>
 						<!-- <th>Mesa</th> -->
 						<?php if (isset($admin)): ?>
@@ -90,6 +91,7 @@
 							<td><?= $r->celular ?></td>
 							<td class="hide_cel"><?= $r->municipio_nombre ?></td>
 							<td class="hide_cel"><?= $r->circunscripcion ?></td>
+							<td><?= $r->fecha_nacimiento ?></td>
 							<td><?= $r->recinto_nombre ?></td>
 							<!-- <td><?//= $r->mesa ?></td> -->
 							<!-- Coordinadores -->

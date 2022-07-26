@@ -170,6 +170,7 @@ class Gestion extends CI_Model{
 			'recinto_nombre' => $this->get_recinto_name($person->IdColegio),
 			'codigo_recinto' => $person->CodigoRecinto,
 			'codigo_colegio' => $person->CodigoColegio,
+			'fecha_nacimiento' => date('d/m/Y', strtotime($person->FechaNacimiento)),
 			'celular' => $data['celular'],
 			'user_id' => $user->id,
 			'cargo' => 'Sub Coordinador',
